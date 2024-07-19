@@ -1,0 +1,292 @@
+/* General styles for the Pomodoro website
+    Made by N.Aslan
+    19/07/24 (EU) */
+
+
+/* Default body css */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.5s ease;
+    background-color: #a3b49a;
+}
+
+body.bg1 {
+    background: url('img/b1.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+body.bg2 {
+    background: url('img/b2.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+body.bg3 {
+    background: url('img/b3.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+body.bg4 {
+    background: url('img/b4.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* positions and buttons*/
+
+.container {
+    text-align: center;
+    position: relative;
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #778371;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #56644f;
+    color: #e9efe5;
+}
+
+
+/* Small button design */
+.small-button {
+    padding: 5px 10px;
+    font-size: 12px;
+    margin: 0 5px;
+}
+
+
+/* The box middle of the screen and timer */
+
+.blurry-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: white;
+}
+
+#timer {
+    font-size: 2em;
+    margin: 20px 0;
+}
+
+.timer-buttons button {
+    padding: 5px 10px;
+    margin: 5px 5px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+/* Navbar */
+
+nav {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+/* Side menu */
+
+.menu-toggle {
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: rgb(48, 38, 38);
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #596851;
+    transition: left 0.3s ease;
+    padding-top: 60px;
+}
+
+.side-menu button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    text-align: left;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+}
+
+.side-menu button:hover {
+    background-color: #31362e;
+}
+
+.side-menu.open {
+    left: 0;
+}
+
+.close-menu {
+    position: absolute;
+    top: 10px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Modal default */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%; 
+    max-width: 400px; 
+    text-align: center;
+}
+
+/* Closing / opening modal */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.open-modal {
+    margin-left: 10px;
+}
+
+
+/* Pomodoro progress bar */
+
+.progress-indicator {
+    display: none;
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    background-color:#56644f;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    color: #ecf5e7;
+}
+
+.progress-indicator .step {
+    margin-bottom: 10px;
+}
+
+.progress-indicator .step-title {
+    font-weight: bold;
+}
+
+.progress-indicator .step-status {
+    font-style: italic;
+}
+
+/* Upload button label */
+
+.upload-label {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #778371;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.upload-label:hover {
+    background-color: #56644f;
+    color: #e9efe5;
+}
+
+#uploadBackground {
+    display: none; 
+}
+
+.upload-label {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #778371;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.upload-label:hover {
+    background-color: #56644f;
+    color: #e9efe5;
+}
+
+#uploadBackground {
+    display: none; 
+}
+
+/* fullscreen button */
+
+.fullscreen-button {
+    padding: 5px 15px;
+    font-size: 12px;
+    margin: 0 5px;
+}
+

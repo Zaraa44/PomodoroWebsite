@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <nav>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <button class="restart small-button" onclick="refreshPage()">Restart pomodoro</button>
+        <button class="fullscreen-button small-button" onclick="toggleFullscreen()">Fullscreen</button>
+    </nav>
+    <div class="container">
+        <div class="blurry-box">
+            <p>Pomodoro Timer</p>
+            <div id="timer">25:00</div>
+            <div class="timer-buttons">
+                <button id="startScheduleButton" onclick="startPomodoroSchedule()">Start Pomodoro Schedule</button>
+                <button onclick="startTimer()">Continue</button>
+                <button onclick="stopTimer()">Stop</button>
+                <button onclick="resetToCurrentTime()">Reset</button>
+            </div>
+        </div>
+    </div>
+    <div class="side-menu" id="sideMenu">
+        <button class="close-menu" onclick="toggleMenu()">✖</button>
+        <button onclick="changeBackground('bg1')">Orange hills</button>
+        <button onclick="changeBackground('bg2')">Cotton candy sky</button>
+        <button onclick="changeBackground('bg3')">Blue fog</button>
+        <button onclick="changeBackground('bg4')">Hearty flowers</button>
+        <button onclick="changeBackground('bg5')">Sage</button>
+        <button class="open-modal small-button" onclick="openBackgroundModal()">Change Background</button>
+    </div>
+
+    <!-- Progress Indicator Sidebar -->
+    <div class="progress-indicator">
+        <div class="step">
+            <div class="step-title">Pomodoro 1</div>
+            <div class="step-status">Not started</div>
+        </div>
+        <div class="step">
+            <div class="step-title">Break 1</div>
+            <div class="step-status">Not started</div>
+        </div>
+        <div class="step">
+            <div class="step-title">Pomodoro 2</div>
+            <div class="step-status">Not started</div>
+        </div>
+        <div class="step">
+            <div class="step-title">Break 2</div>
+            <div class="step-status">Not started</div>
+        </div>
+        <div class="step">
+            <div class="step-title">Pomodoro 3</div>
+            <div class="step-status">Not started</div>
+        </div>
+        <div class="step">
+            <div class="step-title">Break 3</div>
+            <div class="step-status">Not started</div>
+        </div>
+        <div class="step">
+            <div class="step-title">Pomodoro 4</div>
+            <div class="step-status">Not started</div>
+        </div>
+        <div class="step">
+            <div class="step-title">Long Break</div>
+            <div class="step-status">Not started</div>
+        </div>
+    </div>
+
+    <!-- Background Modal -->
+    <div id="backgroundModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBackgroundModal()">&times;</span>
+            <h2>Choose your own background</h2>
+            <label for="uploadBackground" class="upload-label">Upload Background Image</label>
+            <input type="file" id="uploadBackground" accept="image/*" onchange="uploadBackgroundImage(event)">
+        </div>
+    </div>
+
+    <script src="javaScript.js"></script>
+</body>
+</html>
